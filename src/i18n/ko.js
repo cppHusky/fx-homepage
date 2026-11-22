@@ -24,10 +24,10 @@ export default {
   guideTitleLine1: "알림을 받는 방법은",
   guideTitleLine2: "원하는 대로.",
   guideIntro: "알림을 받을 방법을 선택하세요. ntfy 앱이나 브라우저에서 구독할 수 있습니다.",
-  deviceLabel: "기기",
-  deviceAria: "기기 선택",
+  deviceLabel: "플랫폼",
+  deviceAria: "플랫폼 선택",
   guideControlsAria: "구독 안내",
-  desktop: "데스크톱",
+  web: "웹",
   android: "Android",
   ios: "iPhone / iPad",
   useLabel: "사용 방법",
@@ -60,18 +60,9 @@ export default {
     USD: "미국 달러",
   },
   guide: {
-    desktop: {
-      app: {
-        title: "ntfy 데스크톱 앱에서 구독하기",
-        steps: [
-          '<a href="https://ntfy.sh/#subscribe" target="_blank" rel="noopener noreferrer">ntfy 데스크톱 앱</a>을 설치합니다.',
-          "서버를 추가하고 주소에 https://fx.cpphusky.xyz 를 입력합니다.",
-          '여기에 표시된 채널을 구독합니다: <code class="dynamic-topic"></code>.',
-          "운영체제 설정에서 ntfy 알림을 허용합니다.",
-        ],
-      },
+    web: {
       browser: {
-        title: "데스크톱 브라우저에서 구독하기",
+        title: "ntfy 웹 앱에서 구독하기",
         steps: [
           '<a href="https://fx.cpphusky.xyz/app">ntfy 웹 앱</a>을 엽니다.',
           '여기에 표시된 채널을 구독합니다: <code class="dynamic-topic"></code>.',

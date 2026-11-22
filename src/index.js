@@ -300,6 +300,7 @@ const PAGE = `<!doctype html>
         border-bottom: 1px solid var(--line);
       }
       .control-group { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+      .control-group[hidden] { display: none; }
       .control-label {
         margin-right: 6px;
         color: var(--muted);
@@ -317,6 +318,7 @@ const PAGE = `<!doctype html>
         font-size: 12px;
         cursor: pointer;
       }
+      .tab[hidden] { display: none; }
       .tab[aria-pressed="true"] {
         border-color: #cbd5c7;
         background: var(--surface);
@@ -527,16 +529,16 @@ const PAGE = `<!doctype html>
             <p data-i18n="guideIntro">Choose how you’d like to receive notifications. You can subscribe in the ntfy app or right in your browser.</p>
           </div>
           <div class="guide-controls" aria-label="Subscription instructions" data-i18n-aria="guideControlsAria">
-            <div class="control-group" role="group" aria-label="Choose your device" data-i18n-aria="deviceAria">
-              <span class="control-label" data-i18n="deviceLabel">Device</span>
-              <button class="tab" type="button" data-device="desktop" aria-pressed="true" data-i18n="desktop">Desktop</button>
+            <div class="control-group" role="group" aria-label="Choose your platform" data-i18n-aria="deviceAria">
+              <span class="control-label" data-i18n="deviceLabel">Platform</span>
+              <button class="tab" type="button" data-device="web" aria-pressed="true" data-i18n="web">Web</button>
               <button class="tab" type="button" data-device="android" aria-pressed="false" data-i18n="android">Android</button>
               <button class="tab" type="button" data-device="ios" aria-pressed="false" data-i18n="ios">iPhone / iPad</button>
             </div>
-            <div class="control-group" role="group" aria-label="Choose app or browser" data-i18n-aria="clientAria">
+            <div class="control-group use-control" role="group" aria-label="Choose app or browser" data-i18n-aria="clientAria">
               <span class="control-label" data-i18n="useLabel">Use</span>
-              <button class="tab" type="button" data-client="app" aria-pressed="true" data-i18n="app">ntfy app</button>
-              <button class="tab" type="button" data-client="browser" aria-pressed="false" data-i18n="browser">Browser</button>
+              <button class="tab" type="button" data-client="browser" aria-pressed="true" data-i18n="browser">Browser</button>
+              <button class="tab" type="button" data-client="app" aria-pressed="false" data-i18n="app">ntfy app</button>
             </div>
           </div>
           <div class="guide-content" id="guide-content" aria-live="polite"></div>
@@ -560,6 +562,8 @@ const PAGE = `<!doctype html>
       const openLink = document.querySelector("#open-link");
       const toast = document.querySelector("#toast");
       const languageSelect = document.querySelector("#language-select");
+      const appButton = document.querySelector('[data-client="app"]');
+      const browserButton = document.querySelector('[data-client="browser"]');
       let toastTimeout;
       let locale = "en";
       let messages = messagesByLocale.en;
@@ -578,7 +582,7 @@ const PAGE = `<!doctype html>
         toastTimeout = window.setTimeout(() => toast.classList.remove("is-visible"), 2600);
       }
       const content = document.querySelector("#guide-content");
-      let device = "desktop";
+      let device = "web";
       let client = "app";
 
       function normalizeLocale(language) {
@@ -684,6 +688,10 @@ const PAGE = `<!doctype html>
       }
 
       function updateGuide() {
+        appButton.hidden = device === "web";
+        if (device === "web") client = "browser";
+        appButton.setAttribute("aria-pressed", String(client === "app"));
+        browserButton.setAttribute("aria-pressed", String(client === "browser"));
         const selected = messages.guide[device][client];
         const copyDetailsLabel = escapeHtml(messages.copyDetailsAria);
         const serverLabel = escapeHtml(messages.serverLabel);

@@ -24,10 +24,10 @@ export default {
   guideTitleLine1: "接收提醒，",
   guideTitleLine2: "由你選擇。",
   guideIntro: "選擇接收通知的方式。你可以使用 ntfy 應用程式，也可以直接在瀏覽器中訂閱。",
-  deviceLabel: "裝置",
-  deviceAria: "選擇裝置",
+  deviceLabel: "平台",
+  deviceAria: "選擇平台",
   guideControlsAria: "訂閱說明",
-  desktop: "桌面裝置",
+  web: "網頁",
   android: "Android",
   ios: "iPhone / iPad",
   useLabel: "方式",
@@ -60,18 +60,9 @@ export default {
     USD: "美元",
   },
   guide: {
-    desktop: {
-      app: {
-        title: "在 ntfy 桌面應用程式中訂閱",
-        steps: [
-          '安裝 <a href="https://ntfy.sh/#subscribe" target="_blank" rel="noopener noreferrer">ntfy 桌面應用程式</a>。',
-          "新增伺服器，位址填寫 https://fx.cpphusky.xyz。",
-          '訂閱此處顯示的頻道：<code class="dynamic-topic"></code>。',
-          "在作業系統設定中允許 ntfy 傳送通知。",
-        ],
-      },
+    web: {
       browser: {
-        title: "在桌面瀏覽器中訂閱",
+        title: "在 ntfy 網頁應用程式中訂閱",
         steps: [
           '開啟 <a href="https://fx.cpphusky.xyz/app">ntfy 網頁應用程式</a>。',
           '訂閱此處顯示的頻道：<code class="dynamic-topic"></code>。',

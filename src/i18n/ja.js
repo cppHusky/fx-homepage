@@ -24,10 +24,10 @@ export default {
   guideTitleLine1: "受け取り方は、",
   guideTitleLine2: "あなたのスタイルで。",
   guideIntro: "通知の受け取り方を選んでください。ntfy アプリでもブラウザーでも購読できます。",
-  deviceLabel: "デバイス",
-  deviceAria: "デバイスを選択",
+  deviceLabel: "プラットフォーム",
+  deviceAria: "プラットフォームを選択",
   guideControlsAria: "購読方法",
-  desktop: "デスクトップ",
+  web: "ウェブ",
   android: "Android",
   ios: "iPhone / iPad",
   useLabel: "利用方法",
@@ -60,18 +60,9 @@ export default {
     USD: "米ドル",
   },
   guide: {
-    desktop: {
-      app: {
-        title: "ntfy デスクトップアプリで購読",
-        steps: [
-          '<a href="https://ntfy.sh/#subscribe" target="_blank" rel="noopener noreferrer">ntfy デスクトップアプリ</a>をインストールします。',
-          "サーバーを追加し、アドレスに https://fx.cpphusky.xyz を入力します。",
-          'ここに表示されているチャンネルを購読します：<code class="dynamic-topic"></code>。',
-          "OSの設定で ntfy の通知を許可します。",
-        ],
-      },
+    web: {
       browser: {
-        title: "デスクトップブラウザーで購読",
+        title: "ntfy ウェブアプリで購読",
         steps: [
           '<a href="https://fx.cpphusky.xyz/app">ntfy ウェブアプリ</a>を開きます。',
           'ここに表示されているチャンネルを購読します：<code class="dynamic-topic"></code>。',

@@ -24,10 +24,10 @@ export default {
   guideTitleLine1: "Your alerts,",
   guideTitleLine2: "your way.",
   guideIntro: "Choose how you’d like to receive notifications. You can subscribe in the ntfy app or right in your browser.",
-  deviceLabel: "Device",
-  deviceAria: "Choose your device",
+  deviceLabel: "Platform",
+  deviceAria: "Choose your platform",
   guideControlsAria: "Subscription instructions",
-  desktop: "Desktop",
+  web: "Web",
   android: "Android",
   ios: "iPhone / iPad",
   useLabel: "Use",
@@ -60,18 +60,9 @@ export default {
     USD: "US dollar",
   },
   guide: {
-    desktop: {
-      app: {
-        title: "Subscribe in the ntfy app",
-        steps: [
-          'Install <a href="https://ntfy.sh/#subscribe" target="_blank" rel="noopener noreferrer">ntfy for desktop</a>.',
-          "Add a server using https://fx.cpphusky.xyz as its address.",
-          'Subscribe to the channel shown here: <code class="dynamic-topic"></code>.',
-          "Allow notifications from ntfy in your operating system settings.",
-        ],
-      },
+    web: {
       browser: {
-        title: "Subscribe in your desktop browser",
+        title: "Subscribe in the ntfy web app",
         steps: [
           'Open the <a href="https://fx.cpphusky.xyz/app">ntfy web app</a>.',
           'Subscribe to the channel shown here: <code class="dynamic-topic"></code>.',
