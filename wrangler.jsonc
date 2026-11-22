@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fx-homepage",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-22",
+  "routes": [
+    {
+      "pattern": "fx.cpphusky.xyz",
+      "zone_name": "cpphusky.xyz"
+    }
+  ]
+}
