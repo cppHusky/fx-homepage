@@ -20,6 +20,16 @@ const PAGE = `<!doctype html>
     <meta name="theme-color" content="#f5f4ed">
     <meta name="description" content="${translations.en.metaDescription}">
     <title>${translations.en.title}</title>
+    <link rel="canonical" href="https://fx.cpphusky.xyz/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fx.cpphusky.xyz/">
+    <meta property="og:site_name" content="cppHusky FX alerts">
+    <meta property="og:title" content="${translations.en.title}">
+    <meta property="og:description" content="${translations.en.metaDescription}">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="${translations.en.title}">
+    <meta name="twitter:description" content="${translations.en.metaDescription}">
     <style>
       :root {
         color-scheme: light;
@@ -601,6 +611,17 @@ const PAGE = `<!doctype html>
         document.documentElement.lang = locale;
         document.title = messages.title;
         document.querySelector('meta[name="description"]').content = messages.metaDescription;
+        document.querySelector('meta[property="og:title"]').content = messages.title;
+        document.querySelector('meta[property="og:description"]').content = messages.metaDescription;
+        document.querySelector('meta[property="og:locale"]').content = ({
+          en: "en_US",
+          "zh-CN": "zh_CN",
+          "zh-TW": "zh_TW",
+          ja: "ja_JP",
+          ko: "ko_KR",
+        })[locale];
+        document.querySelector('meta[name="twitter:title"]').content = messages.title;
+        document.querySelector('meta[name="twitter:description"]').content = messages.metaDescription;
 
         document.querySelectorAll("[data-i18n]").forEach((element) => {
           const value = messages[element.dataset.i18n];
