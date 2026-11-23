@@ -5,8 +5,10 @@ const CURRENCIES = [
   "CNY",
   "EUR",
   "GBP",
+  "HKD",
   "JPY",
   "KRW",
+  "NTD",
   "SGD",
   "USD",
 ];
